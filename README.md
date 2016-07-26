@@ -31,9 +31,10 @@ We’re saving the plugins output to `author_photo`:
 
 #### 2. Write an if/else clause for the result
 
-If the author photo exists `true` we gonna use it, otherwise `false` we use the placeholder image.  
+If the author photo exists `true` we gonna use it, otherwise `false` we use the placeholder image. You need to put quotes around `"true"` as the return value to Liquid is a string.
+
 ```liquid
-{% if author_photo == true %}
+{% if author_photo == "true" %}
   {% assign author_photo = author_photo_url | prepend: "/" | prepend: site.baseurl %}
 {% else %}
   {% assign author_photo = "no-photo.jpg" | prepend: "/images/routines/" | prepend: site.baseurl %}
